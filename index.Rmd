@@ -1,0 +1,93 @@
+---
+title: "Visualisasi Data Dengan GGPLOT2"
+author: "Hafizh Nursyafiq-Institut Teknologi Statistika dan Bisnis Muhammadiyah"
+date: "`r Sys.Date()`"
+output: 
+  html_document:
+    theme: flatly
+    higlight: zenburn
+    toc: true
+    toc_float:
+      collapsed: true
+    df_print: paged
+bibliography: references.bib
+---
+
+```{=html}
+<style>
+body{
+text-align: justify}
+</style>
+```
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Pengantar GGPLOT2
+
+Visualisasi data adalah salah satu langkah terpenting dalam analisis data. Ia tidak hanya membantu dalam memahami pola, tren, dan hubungan antar variabel, tetapi juga menjadi alat komunikasi yang kuat untuk menyampaikan wawasan kepada audiens. Dalam dunia R, ggplot2 adalah library yang paling populer untuk visualisasi data. Dikembangkan oleh Hadley Wickham, ggplot2 menawarkan pendekatan berbasis Grammar of Graphics, yang memungkinkan pengguna untuk membangun grafik secara modular dengan menambahkan elemen-elemen visual secara bertahap.
+
+Keunggulan utama ggplot2 terletak pada fleksibilitas dan kemampuannya menghasilkan grafik yang estetis serta informatif. Dengan ggplot2, Anda dapat membuat berbagai jenis grafik, mulai dari diagram batang, garis, scatter plot, hingga visualisasi kompleks seperti heatmap dan faceting. Semua ini dapat dilakukan dengan sintaksis yang sederhana namun sangat intuitif. Selain itu, ggplot2 mendukung kustomisasi yang mendalam, seperti pengaturan warna, tema, label, hingga skala, sehingga setiap grafik dapat disesuaikan sesuai kebutuhan dan audiens yang dituju.
+
+Salah satu fitur yang membedakan ggplot2 dari library lain adalah kompatibilitasnya dengan tidy data, paradigma data yang menyederhanakan analisis dan visualisasi. Dalam paradigma ini, setiap kolom mewakili variabel, setiap baris adalah observasi, dan setiap tabel adalah dataset. ggplot2 dapat memanfaatkan struktur data ini secara langsung tanpa memerlukan banyak penyesuaian tambahan, menjadikannya alat yang sangat efisien. Hal ini membuat ggplot2 sangat diminati oleh peneliti, analis data, hingga profesional di berbagai bidang.
+
+Dengan ggplot2, visualisasi data bukan hanya tentang menyajikan angka, tetapi juga membangun narasi yang dapat diakses dan dipahami oleh semua orang. Apakah Anda seorang mahasiswa, profesional, atau penggemar data, ggplot2 menyediakan alat yang memungkinkan Anda menyampaikan ide dan temuan dengan cara yang menarik dan efektif. Panduan ini akan membantu Anda memahami prinsip dasar ggplot2, mulai dari konsep hingga penerapan praktis. Mari kita mulai perjalanan Anda menuju visualisasi data yang lebih baik.
+
+
+## 1.1 Struktur Dasar GGPLOT2
+
+ggplot2 adalah paket R yang digunakan untuk membuat visualisasi data yang menarik dan informatif. Paket ini mengikuti prinsip "grammar of graphics", yang memungkinkan pengguna untuk membangun grafik dengan cara yang terstruktur dan fleksibel.
+
+1. Pengenalan ggplot2
+
+ggplot2 adalah bagian dari tidyverse, yang merupakan kumpulan paket R untuk analisis data.
+Dengan ggplot2, Anda dapat membuat berbagai jenis grafik, termasuk scatter plots, line charts, bar charts, dan banyak lagi.
+
+2. Struktur Dasar ggplot2
+
+Grafik dalam ggplot2 dibangun dengan tiga komponen utama :
+
+Data: Dataset yang berisi informasi yang ingin divisualisasikan.
+Estetika (aes): Mappings yang menghubungkan variabel dalam dataset dengan elemen visual grafik, seperti sumbu x dan y, warna, ukuran, dan bentuk.
+Geometri: Jenis grafik yang ingin dibuat, seperti titik (scatter plot), garis (line plot), atau batang (bar chart).
+
+3. Membuat Grafik Dasar
+
+Untuk membuat grafik dasar, Anda perlu menentukan data yang akan digunakan, variabel yang akan diplot pada sumbu x dan y, serta jenis geometri yang akan digunakan. Grafik dasar dapat berupa scatter plot yang menunjukkan hubungan antara dua variabel.
+
+4. Menambahkan Elemen ke Grafik
+
+Anda dapat memperkaya grafik dengan menambahkan berbagai elemen:
+
+Judul dan Label: Menambahkan judul dan label sumbu untuk memberikan konteks pada grafik.
+Warna dan Ukuran: Menggunakan warna untuk membedakan kategori dan ukuran untuk menunjukkan nilai yang berbeda.
+Garis Regresi: Menambahkan garis regresi untuk menunjukkan tren dalam data.
+
+5. Faceting
+
+Faceting memungkinkan Anda untuk membagi grafik menjadi beberapa panel berdasarkan variabel kategori. Ini berguna untuk membandingkan pola di antara kelompok yang berbeda dalam dataset.
+
+6. Mengubah Tema
+
+ggplot2 menyediakan berbagai tema yang dapat digunakan untuk mengubah tampilan grafik. Anda dapat memilih tema yang sesuai dengan presentasi atau publikasi Anda, seperti tema minimalis atau tema gelap.
+
+7. Menyimpan Grafik
+
+Setelah membuat grafik, Anda dapat menyimpannya dalam berbagai format, seperti PNG, JPEG, atau PDF. Ini memungkinkan Anda untuk menggunakan grafik dalam laporan, presentasi, atau publikasi.
+
+8. Contoh Grafik yang Lebih Kompleks
+
+Grafik yang lebih kompleks dapat menggabungkan berbagai elemen, seperti:
+
+Menggunakan beberapa geometri dalam satu grafik.
+Menambahkan anotasi untuk memberikan informasi tambahan.
+Menggunakan palet warna yang berbeda untuk meningkatkan estetika.
+
+## 1.2 Membuat Perbedaan Warna Grup
+
+```{r}
+# Muat library ggplot2
+
+```
+
+
