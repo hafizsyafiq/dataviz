@@ -69,7 +69,7 @@ Faceting memungkinkan Anda untuk membagi grafik menjadi beberapa panel berdasark
 
 6. Mengubah Tema
 
-ggplot2 menyediakan berbagai tema yang dapat digunakan untuk mengubah tampilan grafik. Anda dapat memilih tema yang sesuai dengan presentasi atau publikasi Anda, seperti tema minimalis atau tema gelap.
+Ggplot2 menyediakan berbagai tema yang dapat digunakan untuk mengubah tampilan grafik. Anda dapat memilih tema yang sesuai dengan presentasi atau publikasi Anda, seperti tema minimalis atau tema gelap.
 
 7. Menyimpan Grafik
 
