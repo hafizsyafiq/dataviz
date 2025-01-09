@@ -34,60 +34,120 @@ Salah satu fitur yang membedakan ggplot2 dari library lain adalah kompatibilitas
 Dengan ggplot2, visualisasi data bukan hanya tentang menyajikan angka, tetapi juga membangun narasi yang dapat diakses dan dipahami oleh semua orang. Apakah Anda seorang mahasiswa, profesional, atau penggemar data, ggplot2 menyediakan alat yang memungkinkan Anda menyampaikan ide dan temuan dengan cara yang menarik dan efektif. Panduan ini akan membantu Anda memahami prinsip dasar ggplot2, mulai dari konsep hingga penerapan praktis. Mari kita mulai perjalanan Anda menuju visualisasi data yang lebih baik.
 
 
-## 1.1 Struktur Dasar GGPLOT2
+# 1.1 Struktur Dasar GGPLOT2
 
 ggplot2 adalah paket R yang digunakan untuk membuat visualisasi data yang menarik dan informatif. Paket ini mengikuti prinsip "grammar of graphics", yang memungkinkan pengguna untuk membangun grafik dengan cara yang terstruktur dan fleksibel.
 
-1. Pengenalan ggplot2
+1.Pengenalan ggplot2
 
-ggplot2 adalah bagian dari tidyverse, yang merupakan kumpulan paket R untuk analisis data.
-Dengan ggplot2, Anda dapat membuat berbagai jenis grafik, termasuk scatter plots, line charts, bar charts, dan banyak lagi.
+  ggplot2 adalah bagian dari tidyverse, yang merupakan kumpulan paket R untuk analisis data.
+  Dengan ggplot2, Anda dapat membuat berbagai jenis grafik, termasuk scatter plots, line charts, bar     charts, dan banyak lagi.
 
-2. Struktur Dasar ggplot2
+2.Struktur Dasar ggplot2
 
-Grafik dalam ggplot2 dibangun dengan tiga komponen utama :
+  Grafik dalam ggplot2 dibangun dengan tiga komponen utama :
 
-Data: Dataset yang berisi informasi yang ingin divisualisasikan.
-Estetika (aes): Mappings yang menghubungkan variabel dalam dataset dengan elemen visual grafik, seperti sumbu x dan y, warna, ukuran, dan bentuk.
-Geometri: Jenis grafik yang ingin dibuat, seperti titik (scatter plot), garis (line plot), atau batang (bar chart).
+  Data: Dataset yang berisi informasi yang ingin divisualisasikan.
+  Estetika (aes): Mappings yang menghubungkan variabel dalam dataset dengan elemen visual grafik,        seperti sumbu x dan y, warna, ukuran, dan bentuk.
+  Geometri: Jenis grafik yang ingin dibuat, seperti titik (scatter plot), garis (line plot), atau        batang (bar chart).
 
-3. Membuat Grafik Dasar
+3.Membuat Grafik Dasar
 
-Untuk membuat grafik dasar, Anda perlu menentukan data yang akan digunakan, variabel yang akan diplot pada sumbu x dan y, serta jenis geometri yang akan digunakan. Grafik dasar dapat berupa scatter plot yang menunjukkan hubungan antara dua variabel.
+  Untuk membuat grafik dasar, Anda perlu menentukan data yang akan digunakan, variabel yang akan diplot   pada sumbu x dan y, serta jenis geometri yang akan digunakan. Grafik dasar dapat berupa scatter plot   yang menunjukkan hubungan antara dua variabel.
 
-4. Menambahkan Elemen ke Grafik
+4.Menambahkan Elemen ke Grafik
 
-Anda dapat memperkaya grafik dengan menambahkan berbagai elemen:
+  Anda dapat memperkaya grafik dengan menambahkan berbagai elemen:
 
-Judul dan Label: Menambahkan judul dan label sumbu untuk memberikan konteks pada grafik.
-Warna dan Ukuran: Menggunakan warna untuk membedakan kategori dan ukuran untuk menunjukkan nilai yang berbeda.
-Garis Regresi: Menambahkan garis regresi untuk menunjukkan tren dalam data.
+  Judul dan Label: Menambahkan judul dan label sumbu untuk memberikan konteks pada grafik.
+  Warna dan Ukuran: Menggunakan warna untuk membedakan kategori dan ukuran untuk menunjukkan nilai yang   berbeda.
+  Garis Regresi: Menambahkan garis regresi untuk menunjukkan tren dalam data.
 
-5. Faceting
+5.Faceting
 
-Faceting memungkinkan Anda untuk membagi grafik menjadi beberapa panel berdasarkan variabel kategori. Ini berguna untuk membandingkan pola di antara kelompok yang berbeda dalam dataset.
+  Faceting memungkinkan Anda untuk membagi grafik menjadi beberapa panel berdasarkan variabel kategori.   Ini berguna untuk membandingkan pola di antara kelompok yang berbeda dalam dataset.
 
-6. Mengubah Tema
+6.Mengubah Tema
 
-Ggplot2 menyediakan berbagai tema yang dapat digunakan untuk mengubah tampilan grafik. Anda dapat memilih tema yang sesuai dengan presentasi atau publikasi Anda, seperti tema minimalis atau tema gelap.
+  Ggplot2 menyediakan berbagai tema yang dapat digunakan untuk mengubah tampilan grafik. Anda dapat      memilih tema yang sesuai dengan presentasi atau publikasi Anda, seperti tema minimalis atau tema       gelap.
 
-7. Menyimpan Grafik
+7.Menyimpan Grafik
 
-Setelah membuat grafik, Anda dapat menyimpannya dalam berbagai format, seperti PNG, JPEG, atau PDF. Ini memungkinkan Anda untuk menggunakan grafik dalam laporan, presentasi, atau publikasi.
+  Setelah membuat grafik, Anda dapat menyimpannya dalam berbagai format, seperti PNG, JPEG, atau PDF.    Ini memungkinkan Anda untuk menggunakan grafik dalam laporan, presentasi, atau publikasi.
 
-8. Contoh Grafik yang Lebih Kompleks
+8.Contoh Grafik yang Lebih Kompleks
 
-Grafik yang lebih kompleks dapat menggabungkan berbagai elemen, seperti:
+  Grafik yang lebih kompleks dapat menggabungkan berbagai elemen, seperti:
 
-Menggunakan beberapa geometri dalam satu grafik.
-Menambahkan anotasi untuk memberikan informasi tambahan.
-Menggunakan palet warna yang berbeda untuk meningkatkan estetika.
+  Menggunakan beberapa geometri dalam satu grafik.
+  Menambahkan anotasi untuk memberikan informasi tambahan.
+  Menggunakan palet warna yang berbeda untuk meningkatkan estetika.
 
-## 1.2 Membuat Perbedaan Warna Grup
+  Berikut di bawah ini adalah contoh membuat data frame dan membuat plot titik pada grafik :
 
 ```{r}
-# Muat library ggplot2
+# Memuat library ggplot2
+library(ggplot2)
 
+# Buat data frame contoh
+data <- data.frame(x = rnorm(100), y = rnorm(100))
+
+# Buat plot titik
+ggplot(data, aes(x = x, y = y)) +
+  geom_point() +
+  labs(title = "Plot Titik", x = "Sumbu X", y = "Sumbu Y") +  # Perbaikan di sini: 'title' bukan 'tittle'
+  theme_linedraw()
 ```
 
+
+
+
+# 1.2 Membuat Perbedaan Warna Grup
+Pemetaan warna berdasarkan kategori dapat dilakukan untuk memperjelas perbedaan antar kelompok.
+
+Dalam contoh ini, warna mewakili setiap kategori huruf, sehingga pola distribusi data dapat lebih mudah diamati.
+```{r}
+# Muat library ggplot2
+library(ggplot2)
+
+# Buat data frame contoh
+data <- data.frame(x = rnorm(100), y = rnorm(100), grup = sample(c("A", "B", "C", "D"), 100, replace = TRUE))
+
+# Buat plot titik dengan faceting dan warna berbeda untuk setiap grup
+ggplot(data, aes(x = x, y = y, color = grup)) +
+  geom_point()+
+  facet_wrap(~ grup)+ 
+  scale_color_manual(values = c("A" = "blue", "B" = "red", "C" = "yellow", "D" = "Black"))+ # Menentukan warna untuk grup A, B, C dan D
+  theme_dark()
+```
+
+
+# 1.3 Read Data
+
+## A.Membaca Data dari File CSV
+CSV (Comma-Separated Values) adalah format data yang paling umum digunakan. Berikut beberapa cara membaca file CSV. Menggunakan read.csv (Fungsi Bawaan R)
+Membaca file CSV = data_csv <- read.csv(“data.csv”)
+Melihat beberapa baris pertama = head(data_csv)
+
+## B.Membaca Data dari File Excel
+Untuk membaca data dari file Excel, gunakan pustaka seperti readxl atau openxlsx.
+Menggunakan Pustaka readxl = library(readxl)
+Membaca sheet pertama dari file Excel = data_excel <- read_excel(“data.xlsx”)
+Membaca sheet tertentu = data_excel_sheet2 <- read_excel(“data.xlsx,” sheet = 2)
+Melihat beberapa baris pertama = head(data_excel)
+
+# 1.4 View Lizard
+Pada bagian ini, saya akan memberikan contoh cara membaca data dari sebuah file CSV. File yang digunakan dalam contoh ini bernama lizard.csv. Sebelum memulai, pastikan file tersebut telah diunduh atau tersedia di perangkat Anda. Setelah file diunduh, salin file tersebut ke dalam folder kerja yang telah Anda buat untuk proyek ggplot2. Letakkan file tersebut di dalam folder tersebut untuk memudahkan akses. Setelah itu, tambahkan blok kode (chunk) dalam skrip R untuk membaca data tersebut. Contoh implementasi dapat dilihat pada kode berikut
+
+```{r}
+lizard <- read.csv("lizards.csv")
+View(lizard)
+```
+```{r}
+# Buat plot titik
+ggplot(lizard, aes(x = total_length, y = weight))+
+geom_point()+
+labs(tittle = "Plot Titik", x = "total_length", y = "weight")+
+theme_light()
+```
 
