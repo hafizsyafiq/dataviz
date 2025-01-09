@@ -149,5 +149,66 @@ ggplot(lizard, aes(x = total_length, y = weight))+
 geom_point()+
 labs(tittle = "Plot Titik", x = "total_length", y = "weight")+
 theme_light()
+
 ```
+
+# memilih grafik berdarkan jenis data
+
+```{r}
+ggplot(lizard, aes(x=total_length, y=common_name))+
+geom_jitter()
+ labs(title = "Distribusi Total Length Berdasarkan Common Name")
+  
+```
+
+```{r}
+ggplot(lizard, aes(x=total_length, y=common_name))+
+geom_line()
+labs(title = "Tren Total Length Berdasarkan Common Name")
+```
+
+```{r}
+ggplot(lizard, aes(y=common_name))+
+geom_bar()
+labs(title = "Frekuensi Common Name pada Lizard")
+```
+
+
+
+```{r}
+ggplot(lizard, aes(x=weight))+
+geom_histogram(colour="blue",fill="magenta")+
+labs(title = "Distribusi Berat Lizard", x = "Weight", y = "Count")
+
+```
+
+```{r}
+ggplot(lizard, aes(x=total_length, y=weight))+
+geom_point(color="blue",size=2,shape=16)
+labs(title = "Hubungan Antara Total Length dan Berat Lizard", x = "Total Length", y = "Weight")
+```
+
+```{r}
+ggplot(data=lizard, aes(x=total_length, y=weight))+
+geom_point(aes(color=common_name,size=total_length))
+labs(title = "Hubungan Total Length dan Berat Lizard dengan Pembeda Warna dan Ukuran Titik")
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
